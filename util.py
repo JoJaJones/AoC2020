@@ -6,8 +6,8 @@ def load_array(file_name):
 
     return arr
 
-def default_parse(line):
-    return line
+def default_parse(line, strip_it=True):
+    return line.strip() if strip_it else line
 
 def load_and_parse(file_name: str, parse_func=default_parse) -> list:
     arr = []
