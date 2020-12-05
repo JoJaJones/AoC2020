@@ -1,12 +1,7 @@
 from util import *
 
-def parse_function(line):
-    pass
-
 data = load_and_parse("data.txt")
-print(data)
 
-first_entry = data[2]
 def find_coord(data, val_range, high_marker):
     min_val, max_val = val_range
     last_val = False
