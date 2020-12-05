@@ -22,23 +22,6 @@ def find_coord(data, val_range, high_marker):
             if last_val:
                 return max_val
 
-def find_row(data):
-    min_val = 0
-    max_val = 127
-    last_val = False
-    for idx, char in enumerate(data):
-        if idx == len(data) - 1:
-            last_val = True
-
-        if char == "B":
-            min_val = (min_val + max_val) // 2 + 1
-            if last_val:
-                return min_val
-        else:
-            max_val = (min_val + max_val) // 2
-            if last_val:
-                return max_val
-
 def calculate_id(row, col):
     return row*8 + col
 
