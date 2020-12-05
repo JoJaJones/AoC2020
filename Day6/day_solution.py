@@ -1,4 +1,4 @@
-from util import load_and_parse
+from util import *
 
 def parse_function(line):
     pass

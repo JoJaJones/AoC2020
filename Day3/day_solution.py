@@ -1,20 +1,11 @@
-from util import load_and_parse
+from util import *
 
 def parse_function(line):
     return line.strip()
 
-data = load_and_parse("data.txt", parse_function)
+data = load_and_parse("data.txt")
 
 def part_one(data):
-    c_idx = 0
-    count = 0
-    for row in data:
-        if row[c_idx] == "#":
-            count += 1
-        # print(row[c_idx], count)
-        c_idx += 3
-        c_idx %= len(row)
-
     return calc_collisions((3, 1), data)
 
 def calc_collisions(slope, data):
@@ -41,4 +32,5 @@ def part_two(data):
 
     return mult
 
+print(part_one(data))
 print(part_two(data))
