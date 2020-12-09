@@ -45,5 +45,7 @@ def part_two(data):
         prev = cur
     return potentials
 
+
+
 print(part_one(data))
 print(part_two(data))
