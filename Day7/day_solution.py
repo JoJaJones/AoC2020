@@ -56,6 +56,8 @@ def part_one(data):
         found.add(cur_bag)
         if cur_bag in data:
             containers = list(data[cur_bag])
+        else:
+            containers = []
         for container in containers:
             if container not in found and container not in queue:
                 queue.append(container)
