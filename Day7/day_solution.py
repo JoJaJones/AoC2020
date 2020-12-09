@@ -30,7 +30,6 @@ def convert_to_dict(data):
                 contained = {"no other bag": 0}
             else:
                 contained[entry] = int(num)
-        # contained = {entry[2:] if "."not in entry else entry[2:-1]: int(entry[0]) for entry in contained.split(", ")}
 
         if container in rule_dict:
             rule_dict[container].append(contained)
@@ -38,8 +37,6 @@ def convert_to_dict(data):
             rule_dict[container] = contained
 
         for key in contained:
-            # if key[-1] == "s":
-            #     key = key[:-1]
             if key in can_be_in:
                 can_be_in[key].add(container)
             else:
@@ -85,12 +82,13 @@ def part_two(data):
     return find_number_needed_for_bag(data, "shiny gold bag")
 
 
-# print(part_one(fits_in))
+
 # for key in rules:
 #     print(f"{key}: {rules[key]}")
 # print(rules["wavy plum bag"])
 start = time.perf_counter()
 data = load_and_parse("data.txt")
 rules, fits_in = convert_to_dict(data)
+print(part_one(fits_in))
 print(find_number_needed_for_bag(rules, "shiny gold bag"))
 print(time.perf_counter() - start)

@@ -38,7 +38,7 @@ class Computer:
     def load_instructions(self, instruction_list):
         self._op_list = instruction_list
 
-def assembler_parser(data):
+def assembler_parser(line):
     line = line.split(" ")
     line[1] = int(line[1])
     return tuple(line)
